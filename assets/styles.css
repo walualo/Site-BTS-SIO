@@ -57,6 +57,32 @@ body {
     margin-left: auto;
 }
 
+#nav-links {
+  display: flex;
+  gap: 26px;
+  list-style: none;
+}
+
+.nav-link {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+    transition-duration: 0.2s;
+}
+
+#topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(7, 11, 18, 0.82);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
 .ligne{
     display: flex;
     flex-wrap: wrap;
@@ -75,6 +101,13 @@ body {
 
 .contenu .ligne {
     column-gap: 40px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
 }
 
 .contenu .col-sm + .col-sm::before {
@@ -119,7 +152,6 @@ body {
 .padding-20{
     padding: 20px;
 }
-
 
 .marge-bas{
     padding-bottom: 10px;
