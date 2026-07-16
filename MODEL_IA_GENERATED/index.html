@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTS SIO — Services Informatiques aux Organisations | Lycée Dick Ukeiwë</title>
+  <meta name="description" content="BTS SIO au Lycée Dick Ukeiwë (Nouméa, Nouvelle-Calédonie) : devenez développeur (SLAM) ou administrateur systèmes & réseaux (SISR).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,800;1,400&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='80' font-size='80'>⌨️</text></svg>">
+</head>
+<body>
+
+  <!-- ============ BOOT SCREEN ============ -->
+  <div id="boot" aria-hidden="true">
+    <div class="boot-inner">
+      <pre id="boot-log"></pre>
+      <div class="boot-bar"><div id="boot-progress"></div></div>
+      <button id="boot-skip" type="button">[ ESPACE / CLIC — PASSER ]</button>
+    </div>
+  </div>
+
+  <!-- décor global -->
+  <div class="scanlines" aria-hidden="true"></div>
+  <canvas id="matrix" aria-hidden="true"></canvas>
+
+  <!-- ============ NAV ============ -->
+  <header id="topbar">
+    <nav class="nav container">
+      <a class="logo" href="#home">
+        <span class="logo-prompt">~$</span> bts<span class="accent">_sio</span><span class="cursor">▊</span>
+      </a>
+      <button id="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-links">
+        <li><a href="#home" class="nav-link active"><span class="nav-idx">01.</span>accueil</a></li>
+        <li><a href="#bts" class="nav-link"><span class="nav-idx">02.</span>le_bts</a></li>
+        <li><a href="#options" class="nav-link"><span class="nav-idx">03.</span>options</a></li>
+        <li><a href="#lycee" class="nav-link"><span class="nav-idx">04.</span>lycée</a></li>
+        <li><a href="#orientation" class="nav-link"><span class="nav-idx">05.</span>orientation</a></li>
+        <li><a href="#rejoindre" class="nav-link nav-cta"><span class="nav-idx">06.</span>rejoindre</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO / ACCUEIL ============ -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="hero-kicker mono">// Lycée Dick Ukeiwë — Nouméa, Nouvelle-Calédonie</p>
+          <h1 class="glitch" data-text="BTS SIO">BTS SIO</h1>
+          <h2 class="hero-sub">Services Informatiques aux Organisations</h2>
+          <p class="hero-typed mono">&gt; <span id="typed"></span><span class="cursor">▊</span></p>
+          <p class="hero-desc">
+            Une formation Bac+2 pour devenir <strong>développeur d'applications</strong> ou
+            <strong>administrateur systèmes &amp; réseaux</strong>. Code, cloud, cybersécurité :
+            entrez dans la machine.
+          </p>
+          <div class="hero-cta">
+            <a href="#options" class="btn btn-slam">&lt;/&gt; Option SLAM</a>
+            <a href="#options" class="btn btn-sisr">⛁ Option SISR</a>
+            <a href="#rejoindre" class="btn btn-join">→ Rejoindre le BTS</a>
+          </div>
+          <div class="hero-badges mono">
+            <span class="badge">bac+2</span>
+            <span class="badge">alternance possible</span>
+            <span class="badge">poursuite d'études</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="terminal-window" id="hero-terminal">
+            <div class="terminal-head">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-title mono">student@sio: ~/futur</span>
+            </div>
+            <pre class="terminal-body mono"><code><span class="t-prompt">~$</span> whoami
+<span class="t-out">futur_etudiant_sio</span>
+<span class="t-prompt">~$</span> cat objectifs.txt
+<span class="t-out">→ apprendre à coder
+→ administrer des réseaux
+→ sécuriser des systèmes</span>
+<span class="t-prompt">~$</span> sudo choose --option
+<span class="t-slam">  [1] SLAM  — développement</span>
+<span class="t-sisr">  [2] SISR  — réseaux &amp; sécu</span>
+<span class="t-prompt">~$</span> ./lancer_carriere.sh
+<span class="t-ok">[OK] Compilation du futur… 100%</span></code></pre>
+          </div>
+          <div class="hero-glow" aria-hidden="true"></div>
+        </div>
+      </div>
+      <a class="scroll-hint mono" href="#bts">scroll_down ↓</a>
+    </section>
+
+    <!-- ============ SECTION BTS ============ -->
+    <section id="bts" class="section">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="mono section-idx">02.</span> Le BTS SIO <span class="title-line"></span></h2>
+
+        <div class="bts-grid">
+          <article class="card reveal">
+            <div class="card-icon mono">&#123;&#125;</div>
+            <h3>Définition</h3>
+            <p>Le <strong>BTS Services Informatiques aux Organisations</strong> est un diplôme
+            d'État Bac+2 qui forme des professionnels capables de répondre aux besoins
+            informatiques des entreprises : développement d'applications, gestion du parc
+            informatique, administration des réseaux et sécurité des données.</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-icon mono">&gt;_</div>
+            <h3>Objectifs</h3>
+            <p>Former des techniciens opérationnels en deux ans, capables de
+            <strong>concevoir, déployer et maintenir</strong> des solutions informatiques,
+            de travailler en équipe projet et de dialoguer avec les utilisateurs comme avec
+            les experts techniques.</p>
+          </article>
+
+          <article class="card reveal card-wide">
+            <div class="card-icon mono">##</div>
+            <h3>Compétences acquises</h3>
+            <div class="skills">
+              <div class="skill"><span class="mono">programmation</span><div class="skill-bar"><i style="--lvl:90%"></i></div></div>
+              <div class="skill"><span class="mono">réseaux &amp; systèmes</span><div class="skill-bar"><i style="--lvl:85%"></i></div></div>
+              <div class="skill"><span class="mono">cybersécurité</span><div class="skill-bar"><i style="--lvl:80%"></i></div></div>
+              <div class="skill"><span class="mono">bases de données</span><div class="skill-bar"><i style="--lvl:75%"></i></div></div>
+              <div class="skill"><span class="mono">gestion de projet</span><div class="skill-bar"><i style="--lvl:70%"></i></div></div>
+              <div class="skill"><span class="mono">support &amp; services</span><div class="skill-bar"><i style="--lvl:80%"></i></div></div>
+            </div>
+          </article>
+
+          <article class="card reveal card-wide">
+            <div class="card-icon mono">→</div>
+            <h3>Débouchés professionnels</h3>
+            <ul class="jobs mono">
+              <li>développeur web / logiciel</li>
+              <li>développeur d'applications mobiles</li>
+              <li>administrateur systèmes &amp; réseaux</li>
+              <li>technicien cybersécurité</li>
+              <li>technicien support &amp; déploiement</li>
+              <li>pilote d'exploitation</li>
+              <li>gestionnaire de parc informatique</li>
+              <li>poursuite d'études : licence pro, BUT, écoles d'ingénieurs…</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION OPTIONS ============ -->
+    <section id="options" class="section">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="mono section-idx">03.</span> Deux options, deux profils <span class="title-line"></span></h2>
+        <p class="section-intro reveal">En fin de première année, chaque étudiant choisit sa spécialité.
+        Deux chemins, un même diplôme.</p>
+
+        <div class="options-grid">
+          <!-- SLAM -->
+          <article class="option option-slam reveal">
+            <div class="option-head">
+              <span class="option-tag mono">option A</span>
+              <h3 class="mono">&lt;SLAM/&gt;</h3>
+              <p class="option-full">Solutions Logicielles et Applications Métiers</p>
+            </div>
+            <pre class="option-code mono"><code><span class="c-kw">function</span> <span class="c-fn">devenirDev</span>() {
+  <span class="c-kw">const</span> skills = [<span class="c-str">"web"</span>, <span class="c-str">"mobile"</span>, <span class="c-str">"SQL"</span>];
+  <span class="c-kw">return</span> skills.<span class="c-fn">map</span>(s =&gt; <span class="c-str">`expert_${s}`</span>);
+}</code></pre>
+            <p>L'option <strong>développement</strong> : concevoir, coder, tester et maintenir
+            des applications qui répondent aux besoins des entreprises.</p>
+            <ul class="option-list">
+              <li>Développement <strong>web</strong> (front &amp; back-end)</li>
+              <li>Applications <strong>mobiles</strong> et logiciels métiers</li>
+              <li><strong>Bases de données</strong> : conception, SQL</li>
+              <li><strong>Frameworks</strong> et langages : PHP, Python, Java, JS…</li>
+              <li>Méthodes agiles, versioning (Git), tests</li>
+            </ul>
+            <p class="option-metier mono">→ métiers : développeur web, développeur d'applications, analyste programmeur</p>
+          </article>
+
+          <!-- SISR -->
+          <article class="option option-sisr reveal">
+            <div class="option-head">
+              <span class="option-tag mono">option B</span>
+              <h3 class="mono">[SISR]</h3>
+              <p class="option-full">Solutions d'Infrastructure, Systèmes et Réseaux</p>
+            </div>
+            <pre class="option-code mono"><code><span class="c-prompt">root@srv01:~#</span> systemctl status reseau
+<span class="c-ok">● active (running)</span> — uptime 99.99%
+<span class="c-prompt">root@srv01:~#</span> nmap -sS 10.0.0.0/24
+<span class="c-out">→ 254 hôtes sécurisés ✔</span></code></pre>
+            <p>L'option <strong>infrastructure</strong> : installer, administrer et sécuriser
+            les réseaux et les serveurs qui font tourner les organisations.</p>
+            <ul class="option-list">
+              <li>Administration <strong>réseaux</strong> (routage, VLAN, Wi-Fi)</li>
+              <li><strong>Serveurs</strong> Windows &amp; Linux</li>
+              <li><strong>Cybersécurité</strong> : pare-feu, supervision, durcissement</li>
+              <li><strong>Cloud &amp; virtualisation</strong> (VM, conteneurs)</li>
+              <li>Support, déploiement, continuité de service</li>
+            </ul>
+            <p class="option-metier mono">→ métiers : administrateur systèmes &amp; réseaux, technicien sécurité, technicien infrastructure</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION LYCÉE ============ -->
+    <section id="lycee" class="section">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="mono section-idx">04.</span> L'établissement <span class="title-line"></span></h2>
+
+        <div class="lycee-grid">
+          <div class="lycee-info reveal">
+            <h3 class="mono">Lycée Dick Ukeiwë</h3>
+            <p class="lycee-loc mono">📍 Nouméa — Nouvelle-Calédonie</p>
+            <p>Situé à <strong>Nouméa</strong>, le lycée Dick Ukeiwë accueille les étudiants
+            de Nouvelle-Calédonie dans des filières générales, technologiques et supérieures.
+            Son BTS SIO permet de se former aux métiers du numérique
+            <strong>sans quitter le territoire</strong>.</p>
+            <p>Salles informatiques équipées, réseau pédagogique dédié, stages en entreprises
+            locales : la formation s'appuie sur le tissu économique calédonien, où la demande
+            en compétences numériques ne cesse de croître.</p>
+            <div class="lycee-stats">
+              <div class="stat reveal"><span class="stat-num mono" data-count="2">0</span><span class="stat-label">ans de formation</span></div>
+              <div class="stat reveal"><span class="stat-num mono" data-count="2" data-suffix=" opts">0</span><span class="stat-label">SLAM &amp; SISR</span></div>
+              <div class="stat reveal"><span class="stat-num mono" data-count="10" data-suffix="+ sem.">0</span><span class="stat-label">de stage en entreprise</span></div>
+            </div>
+          </div>
+
+          <div class="lycee-map reveal" aria-hidden="true">
+            <div class="map-frame mono">
+              <div class="map-title">// localisation.geo</div>
+              <svg viewBox="0 0 300 200" class="nc-map">
+                <defs>
+                  <radialGradient id="ping" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="var(--slam)" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="var(--slam)" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <!-- grille -->
+                <g stroke="rgba(120,240,200,0.08)" stroke-width="1">
+                  <path d="M0 40H300M0 80H300M0 120H300M0 160H300"/>
+                  <path d="M40 0V200M80 0V200M120 0V200M160 0V200M200 0V200M240 0V200"/>
+                </g>
+                <!-- Grande Terre (stylisée) -->
+                <path d="M60 40 L95 55 L130 80 L170 100 L205 125 L235 150 L245 165 L230 172 L195 150 L160 128 L120 100 L85 72 L55 52 Z"
+                      fill="rgba(0,255,170,0.10)" stroke="rgba(0,255,170,0.55)" stroke-width="1.5"/>
+                <!-- Nouméa ping -->
+                <circle cx="228" cy="160" r="16" fill="url(#ping)" class="ping"/>
+                <circle cx="228" cy="160" r="3.5" fill="var(--slam)"/>
+                <text x="205" y="188" fill="var(--slam)" font-size="10" font-family="JetBrains Mono, monospace">NOUMÉA</text>
+                <text x="12" y="18" fill="rgba(160,255,220,0.5)" font-size="9" font-family="JetBrains Mono, monospace">lat -22.27 / lon 166.44</text>
+              </svg>
+              <div class="map-foot">&gt; ping noumea.nc — 1ms — <span class="t-ok">connecté</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION ORIENTATION ============ -->
+    <section id="orientation" class="section">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="mono section-idx">05.</span> SLAM ou SISR ? <span class="title-line"></span></h2>
+        <p class="section-intro reveal">Pas encore décidé ? Compare les profils… ou laisse le
+        terminal choisir pour toi.</p>
+
+        <div class="profiles reveal">
+          <div class="profile profile-slam">
+            <h3 class="mono">profil // SLAM</h3>
+            <ul>
+              <li>Tu aimes <strong>créer</strong>, construire des choses visibles</li>
+              <li>Résoudre des puzzles logiques te motive</li>
+              <li>Tu veux faire des sites, des applis, des jeux</li>
+              <li>Patience et précision : déboguer ne te fait pas peur</li>
+            </ul>
+          </div>
+          <div class="profile profile-sisr">
+            <h3 class="mono">profil // SISR</h3>
+            <ul>
+              <li>Tu veux comprendre <strong>comment tout est connecté</strong></li>
+              <li>Monter/configurer des machines t'amuse</li>
+              <li>La cybersécurité et le hacking éthique t'attirent</li>
+              <li>Tu aimes que « ça marche » pour tout le monde, tout le temps</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- QUIZ -->
+        <div class="quiz-terminal reveal" id="quiz">
+          <div class="terminal-head">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title mono">orientation.exe — quiz</span>
+          </div>
+          <div class="quiz-body">
+            <div id="quiz-screen">
+              <p class="mono quiz-intro-line">&gt; Lancement du module d'orientation…</p>
+              <p>6 questions rapides pour savoir si tu es plutôt <span class="c-slam">SLAM</span> ou <span class="c-sisr">SISR</span>.</p>
+              <button class="btn btn-quiz mono" id="quiz-start">./demarrer_quiz.sh</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTION REJOINDRE ============ -->
+    <section id="rejoindre" class="section">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="mono section-idx">06.</span> Rejoindre le BTS <span class="title-line"></span></h2>
+        <p class="section-intro reveal">Intéressé·e par la formation ? Dis-nous en un peu plus
+        sur toi : intégration à la rentrée, immersion d'une journée ou simple question.</p>
+
+        <div class="quiz-terminal reveal">
+          <div class="terminal-head">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title mono">candidature.form — nouveau message</span>
+          </div>
+          <form id="join-form" class="join-form" novalidate>
+            <p class="form-line mono">&gt; Dites-nous en un peu plus sur vous :</p>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="f-prenom" class="mono">prénom <span class="req">*</span></label>
+                <input type="text" id="f-prenom" name="prenom" placeholder="Par exemple : Jean" required>
+              </div>
+              <div class="form-field">
+                <label for="f-nom" class="mono">nom <span class="req">*</span></label>
+                <input type="text" id="f-nom" name="nom" placeholder="Par exemple : Dupond" required>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="f-email" class="mono">adresse de messagerie <span class="req">*</span></label>
+              <input type="email" id="f-email" name="email" placeholder="Par exemple : jacques@dupond.com" required>
+            </div>
+
+            <div class="form-row form-row-3">
+              <fieldset class="form-field">
+                <legend class="mono">vous êtes en</legend>
+                <div class="radio-group">
+                  <label><input type="radio" name="niveau" value="Seconde"> Seconde</label>
+                  <label><input type="radio" name="niveau" value="Première"> Première</label>
+                  <label><input type="radio" name="niveau" value="Terminale" checked> Terminale</label>
+                  <label><input type="radio" name="niveau" value="Autre"> Autre</label>
+                </div>
+              </fieldset>
+
+              <div class="form-field">
+                <label for="f-enseignement" class="mono">enseignement</label>
+                <select id="f-enseignement" name="enseignement">
+                  <option>Général</option>
+                  <option>Technologique</option>
+                  <option>Professionnel</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="f-specialite" class="mono">spécialité et options</label>
+                <textarea id="f-specialite" name="specialite" rows="3" placeholder="STMG SIG, NSI, etc"></textarea>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="f-etablissement" class="mono">votre établissement</label>
+              <select id="f-etablissement" name="etablissement">
+                <option value="" selected disabled>Votre établissement</option>
+                <option>Lycée Dick Ukeiwë</option>
+                <option>Lycée Lapérouse</option>
+                <option>Lycée Jules Garnier</option>
+                <option>Lycée du Grand Nouméa</option>
+                <option>Lycée Blaise Pascal</option>
+                <option>Lycée Do Kamo</option>
+                <option>Lycée Apollinaire Anova</option>
+                <option>Autre établissement</option>
+              </select>
+            </div>
+
+            <fieldset class="form-field">
+              <legend class="mono">vos motivations</legend>
+              <div class="check-group">
+                <label><input type="checkbox" name="motivations" value="integrer"> Je souhaite intégrer le BTS SIO à la rentrée prochaine</label>
+                <label><input type="checkbox" name="motivations" value="immersion"> Je souhaite réaliser une immersion en BTS SIO</label>
+                <label><input type="checkbox" name="motivations" value="question"> J'ai une question sur le BTS</label>
+              </div>
+            </fieldset>
+
+            <div class="form-field">
+              <label for="f-presentation" class="mono">dites-nous qui vous êtes : présentez-vous en deux phrases !</label>
+              <textarea id="f-presentation" name="presentation" rows="4" maxlength="180"></textarea>
+              <span class="char-count mono"><span id="char-count">0</span> / 180</span>
+            </div>
+
+            <div class="form-field consent">
+              <label class="mono">
+                <input type="checkbox" id="f-consent" name="consent" required>
+                J'accepte la <a href="#" class="privacy-link">politique de confidentialité</a> <span class="req">*</span>
+              </label>
+            </div>
+
+            <p class="form-error mono" id="form-error" hidden>[ERREUR] Merci de remplir les champs marqués d'une *</p>
+
+            <button type="submit" class="btn btn-quiz mono">./envoyer_message.sh</button>
+          </form>
+
+          <div id="join-success" class="join-success" hidden>
+            <pre class="mono"><code><span class="t-prompt">~$</span> ./envoyer_message.sh
+<span class="t-out">Connexion au serveur du lycée…</span>
+<span class="t-ok">[OK] Message transmis à l'équipe du BTS SIO ✔</span>
+<span class="t-out">Nous te répondrons à l'adresse indiquée. À bientôt !</span></code></pre>
+            <button type="button" class="quiz-restart mono" id="join-reset">↻ envoyer un autre message</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container footer-grid">
+      <p class="mono">~$ echo "BTS SIO — Lycée Dick Ukeiwë, Nouméa, Nouvelle-Calédonie"</p>
+      <p class="footer-links mono">
+        <a href="#home">accueil</a> · <a href="#bts">le_bts</a> ·
+        <a href="#options">options</a> · <a href="#lycee">lycée</a> ·
+        <a href="#orientation">orientation</a> · <a href="#rejoindre">rejoindre</a>
+      </p>
+      <p class="footer-copy mono">© 2026 — site de présentation étudiant · <span class="t-ok">system status: online ●</span></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
