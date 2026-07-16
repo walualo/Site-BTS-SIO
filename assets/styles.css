@@ -1,0 +1,251 @@
+:root{
+    --slam_couleur: #00ffa3;
+    --light-blue: #4fc3ff;
+    --bg: #070b12;
+    --text: #cfe3f5;
+    --font-sans: "Outfit", system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg);
+}
+
+.headers{
+    background-color: #110c3c;
+    color: white;
+    border-radius: 5px;
+    margin: 0 1rem;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.logo_prefix{
+    margin-right: 6px;
+    color: var(--slam_couleur);
+}
+
+.texte-logo{
+    color: white;
+}
+
+.texte-logo2{
+    color: var(--light-blue);
+   margin-left: -5px 
+}
+
+.curseur { 
+    animation: blink 1s steps(1) infinite;
+    margin-left: -5px; 
+    color: var(--slam_couleur); 
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.conteneur{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100%;
+    padding-right: var(--bs-gutter-x, .75rem);
+    padding-left: var(--bs-gutter-x, .75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.ligne{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+.col-sm{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    flex: 1 0 0%;
+    padding: 5px;
+    text-align: center;
+}
+
+.contenu .ligne {
+    column-gap: 40px;
+}
+
+.contenu .col-sm + .col-sm::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 30px;
+    bottom: 30px;
+    width: 1px;
+    background-color: rgb(150, 150, 150);
+}
+
+.nav-liens{
+    color: white;
+    font-size: x-large;
+    text-decoration: none;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-liens:hover {
+    color: #a5b4fc;
+    border-bottom: 2px solid #a5b4fc;
+}
+
+.texte-centre{
+    text-align: center;
+}
+
+.contenu{
+    background-color: #5e5abc;
+    color: #dedcff;
+    border-radius: 5px;
+    margin: 0 1rem;
+}
+
+.espace{
+    padding-top: 10px;
+}
+
+.padding-20{
+    padding: 20px;
+}
+
+
+.marge-bas{
+    padding-bottom: 10px;
+}
+.marge-haut{
+    padding-top: 10px;
+}
+.footer-conteneur {
+    margin: 10px 1rem 0;
+    padding: 0 15px;
+    background-color: #110c3c;
+    color: white;
+    border-radius: 5px;
+}
+
+.bordure{
+    border: 1px solid rgb(150, 150, 150);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: 600;
+    margin-top: 10px;
+    color: #0f172a;
+}
+
+input, select, textarea {
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    padding: 8px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+}
+
+/* Le focus des inputs */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px;
+    background: #0ea5e9;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+button:hover {
+    background: #0284c7;
+}
+
+
+.carte{
+    width: 100%;
+    height: 100%;
+    margin-right: px;
+    background: #fcf7ff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.carte-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    box-shadow: 0 3 20 rgba(0,0,0,0.08);
+}
+
+.carte-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.carte-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.carte-texte {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.4;
+}
+
+.carte-texte-left {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.4;
+    text-align: left;
+}
+.carte-texte-activites {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.4;
+    text-align: left;
+    margin-top: -10px; /* Vraiment pas propre mais bon, je fix comme je peux :D */
+}
+
+.gras{
+    font-weight: bold;
+}
